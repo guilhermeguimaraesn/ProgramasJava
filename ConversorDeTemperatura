@@ -1,0 +1,47 @@
+public static void main(String[] args) {
+
+        // Variáveis:
+        double cel = 0.0;
+        int opcao = 0;
+        char continuar;
+
+        JOptionPane.showMessageDialog(null, "____________________________"
+                + "\nOlá! Bem vindo ao conversor de "
+                + "\nTemperatura Fahrenhite e Kelvin!"
+                + "\n____________________________");
+
+        do {
+            // Entrada de dados:
+            cel = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor em Celcius: "));
+            opcao = Integer.parseInt(JOptionPane.showInputDialog(null, "Em qual temperatura você deseja converter?"
+                    + "\n(1) Fahrenhite!"
+                    + "\n(2) Kelvin!"
+                    + "\nInfome a opção desejada: "));
+
+            // Processamento:
+            double far = 9 * cel / 5 + 32;
+            double kel = cel + 273.15;
+
+            // Saída:
+            switch (opcao) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "A temperatura em Fahrenhite é: \n" + far + " graus!");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "A temperatura em Kelvin é: \n" + kel + " graus!");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+            }
+
+            // Entrada de dados para repetir ou finalizar o conversor:
+            continuar = Character.toLowerCase(JOptionPane.showInputDialog(null, "Deseja realizar um novo cálculo? Digite (s) para sim ou (n) para não!").charAt(0));
+
+        } while (continuar != 'n');
+
+        JOptionPane.showMessageDialog(null, "** OBRIGADO **"
+                + "\n** PROGRAMA FINALIZADO **");
+
+    }
+
+}
